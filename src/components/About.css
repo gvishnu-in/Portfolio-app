@@ -1,0 +1,38 @@
+.about-body {
+  max-width: 68ch;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.about-body p {
+  font-size: 16px;
+  color: var(--text-dim);
+}
+
+.about-contact {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+}
+
+.about-contact li {
+  display: flex;
+  gap: 12px;
+  font-family: var(--font-mono);
+  font-size: 14px;
+}
+
+.about-contact li span:first-child {
+  color: var(--text-faint);
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.about-contact li a,
+.about-contact li span:last-child {
+  color: var(--text);
+}

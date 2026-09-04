@@ -1,0 +1,42 @@
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.education-card {
+  max-width: 60ch;
+  border-left: 2px solid var(--accent);
+  padding-left: 24px;
+}
+
+.education-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.education-card h3 {
+  font-size: 19px;
+}
+
+.education-period {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-faint);
+  white-space: nowrap;
+}
+
+.education-school {
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.education-detail {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  color: var(--text-dim);
+}
