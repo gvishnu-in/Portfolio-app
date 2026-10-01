@@ -30,10 +30,10 @@ repo and let Netlify build it automatically on every push.
 
 ## Before you go live
 
-- Replace the GitHub and LinkedIn URLs in `src/components/Hero.jsx` and
-  `src/components/Footer.jsx` with your real profile links.
-- Replace the placeholder GitHub/live-demo links in
-  `src/components/Projects.jsx` for HomeNest and the Myntra Clone.
-- To make the contact form actually send you email, sign up at
-  [Formspree](https://formspree.io), create a form, and follow the note at
-  the top of `src/components/Contact.jsx`.
+- Replace the placeholder LinkedIn URL in `src/components/Hero.jsx` and
+  `src/components/Footer.jsx` with your profile URL.
+- Verify the project repository and live-demo destinations in
+  `src/components/Projects.jsx` before sharing the portfolio.
+- The contact form is already connected to Formspree in
+  `src/components/Contact.jsx`. Send a test submission and confirm it arrives
+  in your inbox before publishing.

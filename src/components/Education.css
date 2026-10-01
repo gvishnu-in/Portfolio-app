@@ -1,42 +1,59 @@
 .education-list {
   display: flex;
   flex-direction: column;
-  gap: 28px;
+  max-width: 940px;
+  border-top: 1px solid var(--border);
 }
 
 .education-card {
-  max-width: 60ch;
-  border-left: 2px solid var(--accent);
-  padding-left: 24px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(110px, 0.36fr) minmax(120px, 0.3fr);
+  align-items: baseline;
+  gap: 20px;
+  padding: 21px 0;
+  border-bottom: 1px solid var(--border);
 }
 
 .education-top {
   display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 8px;
-  margin-bottom: 8px;
+  flex-direction: column;
+  gap: 6px;
 }
 
 .education-card h3 {
-  font-size: 19px;
+  color: var(--ink);
+  font-size: 15px;
 }
 
 .education-period {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-faint);
-  white-space: nowrap;
+  font-size: 10px;
+  color: var(--faint);
 }
 
 .education-school {
-  color: var(--text);
-  margin-bottom: 4px;
+  color: var(--muted);
+  font-size: 13px;
 }
 
 .education-detail {
   font-family: var(--font-mono);
-  font-size: 13px;
-  color: var(--text-dim);
+  font-size: 10px;
+  color: var(--sage-ink);
+}
+
+@media (max-width: 560px) {
+  .education-card {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 7px 14px;
+  }
+
+  .education-top {
+    grid-column: 1 / -1;
+  }
+
+  .education-school,
+  .education-detail {
+    grid-column: 1 / -1;
+  }
 }

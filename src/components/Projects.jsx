@@ -5,8 +5,8 @@ const projects = [
     path: '~/projects/autopartshub',
     name: 'AutoPartsHub',
     description:
-      'An online automobile-parts platform for browsing vehicle spare parts and product details. React/Vite frontend deployed on Vercel, talking to a JSON Server API deployed on Render.',
-    stack: ['React', 'Vite', 'JavaScript', 'CSS', 'JSON Server'],
+      'A React e-commerce CRUD application for browsing and buying car and bike spare parts. The Vite frontend is deployed on Vercel and communicates with a JSON Server API deployed on Render.',
+    stack: ['React', 'Vite', 'React Router DOM', 'Axios', 'Context API', 'JSON Server', 'CSS3', 'localStorage'],
     github: 'https://github.com/gvishnu-in/AutoPartsHub',
     demo: 'https://auto-parts-hub-chi.vercel.app/',
     extraLink: {
@@ -52,60 +52,121 @@ const projects = [
   },
 ]
 
+function ProjectLinks({ project }) {
+  return (
+    <div className="project-links">
+      {project.github && (
+        <a href={project.github} target="_blank" rel="noreferrer">
+          GitHub <span aria-hidden="true">↗</span>
+        </a>
+      )}
+      {project.demo && (
+        <a href={project.demo} target="_blank" rel="noreferrer">
+          Live Demo <span aria-hidden="true">↗</span>
+        </a>
+      )}
+      {project.extraLink && (
+        <a href={project.extraLink.href} target="_blank" rel="noreferrer">
+          {project.extraLink.label} <span aria-hidden="true">↗</span>
+        </a>
+      )}
+    </div>
+  )
+}
+
 function Projects() {
+  const featuredProject = projects[0]
+
   return (
     <section id="projects" className="section projects">
       <div className="container">
-        <div className="section-head">
-          <span className="section-tag">projects</span>
-          <h2>Things I've built</h2>
+        <div className="projects-heading">
+          <div className="section-head">
+            <span className="section-tag">02 / Selected work</span>
+            <h2>Projects with a purpose.</h2>
+          </div>
+          <p>Product interfaces, APIs, networks, and experiments across the stack.</p>
         </div>
 
-        <div className="projects-list">
-          {projects.map((project) => (
-            <article className="project-card" key={project.name}>
-              <p className="project-path">{project.path}</p>
-              <h3 className="project-name">{project.name}</h3>
-              <p className="project-description">{project.description}</p>
-
-              <ul className="project-stack">
-                {project.stack.map((tech) => (
-                  <li key={tech}>{tech}</li>
-                ))}
-              </ul>
-
-              <div className="project-links">
-                {project.github && (
-                  <a
-                    href={project.github}
-                    className="btn"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    GitHub
-                  </a>
-                )}
-                {project.demo && (
-                  <a
-                    href={project.demo}
-                    className="btn btn-primary"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Live Demo
-                  </a>
-                )}
-                {project.extraLink && (
-                  <a
-                    href={project.extraLink.href}
-                    className="btn"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    {project.extraLink.label}
-                  </a>
-                )}
+        <article className="project-featured">
+          <div
+            className="project-visual"
+            role="img"
+            aria-label="AutoPartsHub deployment diagram: React and Vite frontend deployed on Vercel connects to a JSON Server API deployed on Render."
+          >
+            <div className="project-visual-head">
+              <span>PRODUCT SYSTEM / 01</span>
+              <span>WEB APPLICATION</span>
+            </div>
+            <div className="project-diagram">
+              <div className="project-node">
+                <span>01 / CLIENT</span>
+                <strong>React + Vite</strong>
+                <small>Frontend / Vercel</small>
               </div>
+              <div className="project-connector" aria-hidden="true"><span>API REQUEST</span></div>
+              <div className="project-node">
+                <span>02 / DATA</span>
+                <strong>JSON Server</strong>
+                <small>API / Render</small>
+              </div>
+            </div>
+            <div className="project-visual-foot">
+              <span>INTERFACE</span><span>↔</span><span>API</span>
+            </div>
+          </div>
+
+          <div className="project-featured-copy">
+            <p className="project-index">FEATURED PROJECT / 01</p>
+            <p className="project-path">{featuredProject.path}</p>
+            <h3 className="project-name">{featuredProject.name}</h3>
+            <p className="project-description">{featuredProject.description}</p>
+            <ul className="project-stack">
+              {featuredProject.stack.map((tech) => <li key={tech}>{tech}</li>)}
+            </ul>
+            <ProjectLinks project={featuredProject} />
+          </div>
+        </article>
+
+        <div className="project-detail-band">
+          <ul className="project-facts" aria-label="AutoPartsHub project scope">
+            <li><strong>11</strong><span>Application views</span></li>
+            <li><strong>03</strong><span>Context stores</span></li>
+            <li><strong>18</strong><span>Source files</span></li>
+          </ul>
+          <div className="project-capabilities">
+            <article>
+              <h4>Browse & buy</h4>
+              <p>Category browsing, product details, guest cart, checkout, and order placement.</p>
+            </article>
+            <article>
+              <h4>Account & orders</h4>
+              <p>Validated registration and login, protected wishlist, editable profile, and order tracking.</p>
+            </article>
+            <article>
+              <h4>Manage</h4>
+              <p>Protected routes and an admin panel for adding, editing, and deleting products.</p>
+            </article>
+          </div>
+          <p className="project-implementation">
+            <strong>Implementation</strong>
+            <span>React Router DOM for navigation; page-level Axios calls to the db.json-backed JSON Server API; Context API for authentication, cart, and wishlist state; localStorage for session persistence; plain CSS3 styling.</span>
+          </p>
+        </div>
+
+        <div className="projects-supporting" aria-label="Additional projects">
+          {projects.slice(1).map((project, index) => (
+            <article className="project-row" key={project.name}>
+              <span className="project-row-number">{String(index + 2).padStart(2, '0')}</span>
+              <div className="project-row-main">
+                <p className="project-path">{project.path}</p>
+                <h3 className="project-name">{project.name}</h3>
+                <p className="project-description">{project.description}</p>
+                <ul className="project-stack">
+                  {project.stack.map((tech) => <li key={tech}>{tech}</li>)}
+                </ul>
+              </div>
+              <ProjectLinks project={project} />
             </article>
           ))}
         </div>

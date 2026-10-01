@@ -2,44 +2,45 @@ import './Skills.css'
 
 const groups = [
   {
-    dir: 'programming/',
+    title: 'Languages',
     items: ['Python', 'JavaScript', 'SQL'],
   },
   {
-    dir: 'backend/',
+    title: 'Backend & APIs',
     items: ['Django', 'Django REST Framework', 'REST APIs', 'Node.js'],
   },
   {
-    dir: 'frontend/',
-    items: ['React.js', 'HTML5', 'CSS3'],
+    title: 'Frontend',
+    items: ['React.js', 'Vite', 'HTML5', 'CSS3'],
   },
   {
-    dir: 'database-tools/',
+    title: 'Data & Tools',
     items: ['MySQL', 'MongoDB', 'Git', 'GitHub', 'Power BI'],
   },
   {
-    dir: 'networking/',
+    title: 'Networking',
     items: ['Cisco Packet Tracer', 'VLAN', 'NAT', 'ACL', 'RIP', 'DHCP', 'DNS'],
   },
   {
-    dir: 'ai-ml/',
+    title: 'AI & Computer Vision',
     items: ['TensorFlow', 'OpenCV', 'YOLOv2'],
   },
 ]
 
 function Skills() {
   return (
-    <section id="skills" className="section skills">
+    <section id="skills" className="section skills section-sage">
       <div className="container">
         <div className="section-head">
-          <span className="section-tag">skills</span>
-          <h2>What I work with</h2>
+          <span className="section-tag">03 / Technical toolkit</span>
+          <h2>Tools for the whole stack.</h2>
         </div>
 
         <div className="skills-grid">
-          {groups.map((group) => (
-            <div className="skills-group" key={group.dir}>
-              <p className="skills-dir">{group.dir}</p>
+          {groups.map((group, index) => (
+            <div className="skills-group" key={group.title}>
+              <span className="skills-number">{String(index + 1).padStart(2, '0')}</span>
+              <h3 className="skills-dir">{group.title}</h3>
               <ul>
                 {group.items.map((item) => (
                   <li key={item}>

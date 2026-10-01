@@ -23,10 +23,10 @@ const schools = [
 
 function Education() {
   return (
-    <section id="education" className="section education">
+    <section id="education" className="section education section-light">
       <div className="container">
         <div className="section-head">
-          <span className="section-tag">education</span>
+          <span className="section-tag">04 / Education</span>
           <h2>Academic background</h2>
         </div>
 

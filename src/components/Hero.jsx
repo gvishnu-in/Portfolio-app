@@ -5,15 +5,13 @@ function Hero() {
     <section id="home" className="hero">
       <div className="container hero-inner">
         <div className="hero-copy">
-          <p className="hero-eyebrow">Full Stack Developer</p>
-          <h1 className="hero-name">
-            Vishnu Vardhan
-          </h1>
+          <p className="hero-eyebrow"><span>01</span> DEVELOPER PROFILE <span>HYDERABAD, INDIA</span></p>
+          <h1 className="hero-name">Vishnu Vardhan</h1>
+          <h2 className="hero-role">Entry-level Full Stack Python Developer</h2>
           <p className="hero-intro">
-            Motivated B.Tech graduate with a strong foundation in Python,
-            Django, React, and SQL. I build full stack web applications end
-            to end, and I'm looking for an entry-level full stack developer
-            role where I can grow into a stronger engineer.
+            I build web applications with Python, Django, REST APIs, React,
+            and SQL. I’m looking for an entry-level role where I can contribute
+            across the stack and keep growing as an engineer.
           </p>
           <div className="hero-actions">
             <a href="#projects" className="btn btn-primary">
@@ -47,33 +45,37 @@ function Hero() {
               Download Resume
             </a>
           </div>
-        </div>
-
-        <div className="hero-terminal" aria-hidden="true">
-          <div className="terminal-bar">
-            <span className="terminal-dot" style={{ background: '#d9705a' }}></span>
-            <span className="terminal-dot" style={{ background: '#e3a857' }}></span>
-            <span className="terminal-dot" style={{ background: '#7fae6a' }}></span>
-            <span className="terminal-title">whoami.sh</span>
+          <div className="hero-credentials">
+            <span>B.Tech / Electronics & Communication</span>
+            <span>Available for entry-level roles</span>
           </div>
-          <pre className="terminal-body">
-<code>{`$ whoami
-vishnu_vardhan
-
-$ role
-"Full Stack Developer"
-
-$ stack --list
-python, django, react
-javascript, sql, node
-
-$ status
-open_to_work: true
-
-$ location
-"Hyderabad, India"`}</code>
-          </pre>
         </div>
+
+        <aside className="hero-aside" aria-label="Development focus">
+          <div className="hero-aside-top">
+            <span>FIELD NOTES / 01</span>
+            <span>PYTHON + WEB</span>
+          </div>
+          <img
+            className="hero-photo"
+            src="/portfoliopic.png"
+            alt="Portrait of Vishnu Vardhan"
+          />
+          <div className="hero-aside-caption">
+            <p>Building across layers.</p>
+            <span>Interface / API / Data</span>
+          </div>
+          <div className="hero-aside-bottom">
+            <div>
+              <span>FRONTEND</span>
+              <strong>React, JavaScript</strong>
+            </div>
+            <div>
+              <span>BACKEND</span>
+              <strong>Python, Django, SQL</strong>
+            </div>
+          </div>
+        </aside>
       </div>
     </section>
   )

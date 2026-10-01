@@ -63,17 +63,34 @@ function Contact() {
     <section id="contact" className="section contact">
       <div className="container">
         <div className="section-head">
-          <span className="section-tag">contact</span>
-          <h2>Get in touch</h2>
+          <span className="section-tag">06 / Contact</span>
+          <h2>Let's build something useful.</h2>
         </div>
 
-        <form className="contact-form" onSubmit={handleSubmit} noValidate>
+        <div className="contact-layout">
+          <div className="contact-copy">
+            <p>Open to entry-level Full Stack Python Developer opportunities.</p>
+            <a href="mailto:gv2047@gmail.com">gv2047@gmail.com</a>
+            <a href="tel:+919573580365">+91 95735 80365</a>
+            <a href="https://github.com/gvishnu-in" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/replace-with-your-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <span>Hyderabad, India</span>
+          </div>
+
+          <form
+            className="contact-form"
+            onSubmit={handleSubmit}
+            noValidate
+            aria-busy={status === 'sending'}
+          >
           <div className="form-field">
             <label htmlFor="name">Name</label>
             <input
               id="name"
               name="name"
               type="text"
+              autoComplete="name"
+              required
               value={formData.name}
               onChange={handleChange}
               aria-invalid={Boolean(errors.name)}
@@ -92,6 +109,8 @@ function Contact() {
               id="email"
               name="email"
               type="email"
+              autoComplete="email"
+              required
               value={formData.email}
               onChange={handleChange}
               aria-invalid={Boolean(errors.email)}
@@ -110,6 +129,7 @@ function Contact() {
               id="message"
               name="message"
               rows="5"
+              required
               value={formData.message}
               onChange={handleChange}
               aria-invalid={Boolean(errors.message)}
@@ -134,11 +154,11 @@ function Contact() {
 
           {status === 'error' && (
             <p className="form-status form-status-error" role="status">
-              Something went wrong. Set your Formspree endpoint in
-              Contact.jsx, or try again in a moment.
+              Your message could not be sent. Please try again or email me directly.
             </p>
           )}
-        </form>
+          </form>
+        </div>
       </div>
     </section>
   )
