@@ -84,6 +84,18 @@
   gap: 9px;
 }
 
+.hero-actions .btn {
+  border-color: var(--terracotta);
+  color: var(--paper-white);
+  background: var(--terracotta);
+}
+
+.hero-actions .btn:hover {
+  border-color: var(--terracotta-deep);
+  color: var(--paper-white);
+  background: var(--terracotta-deep);
+}
+
 .hero-credentials {
   display: flex;
   flex-wrap: wrap;
