@@ -73,7 +73,7 @@ function Contact() {
             <a href="mailto:gv2047@gmail.com">gv2047@gmail.com</a>
             <a href="tel:+919573580365">+91 95735 80365</a>
             <a href="https://github.com/gvishnu-in" target="_blank" rel="noreferrer">GitHub</a>
-            <a href="https://www.linkedin.com/in/replace-with-your-linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://www.linkedin.com/in/gvishnuvn1" target="_blank" rel="noreferrer">LinkedIn</a>
             <span>Hyderabad, India</span>
           </div>
 

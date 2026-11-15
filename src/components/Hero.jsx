@@ -29,7 +29,7 @@ function Hero() {
               GitHub
             </a>
             <a
-              href="https://www.linkedin.com/in/replace-with-your-linkedin"
+              href="https://www.linkedin.com/in/gvishnuvn1"
               className="btn"
               target="_blank"
               rel="noreferrer"
