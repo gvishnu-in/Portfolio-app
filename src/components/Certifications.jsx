@@ -2,6 +2,11 @@ import './Certifications.css'
 
 const certifications = [
   {
+    name: 'Walmart',
+    issuer: 'Walmart',
+    href: '/uploaded-files/walmart.pdf',
+  },
+  {
     name: 'CCNAv7: Introduction to Networks',
     issuer: 'Cisco Networking Academy',
     file: 'CCNA-_Introduction_to_Networks_certificate_21eg104b17-anurag-edu-in_aaf942e1-717a-4a5b-9415-e597bc61e6f9.pdf',
@@ -63,7 +68,7 @@ function Certifications() {
               <li key={cert.name}>
                 <a
                   className="cert-name"
-                  href={`/uploaded-files/Certifications/${encodeURIComponent(cert.file)}`}
+                  href={cert.href ?? `/uploaded-files/Certifications/${encodeURIComponent(cert.file)}`}
                   target="_blank"
                   rel="noreferrer"
                 >
